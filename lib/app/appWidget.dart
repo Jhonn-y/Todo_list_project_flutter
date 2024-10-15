@@ -1,10 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:todo_list_project/app/core/database/AdminConnection.dart';
-import 'package:todo_list_project/app/modules/auth/controllers/loginController.dart';
 import 'package:todo_list_project/app/modules/auth/login/authModule.dart';
-import 'package:todo_list_project/app/modules/auth/login/login.dart';
 import 'package:todo_list_project/app/modules/splashPage.dart';
+import 'package:todo_list_project/app/ui/todoListUI.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
@@ -19,6 +18,7 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   void initState() {
     super.initState();
+    FirebaseAuth auth = FirebaseAuth.instance;
     WidgetsBinding.instance?.addObserver(admconnetion);
   }
 
@@ -32,6 +32,7 @@ class _AppWidgetState extends State<AppWidget> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todo list',
+      theme: TodoListUI.theme,
       home: SplashPage(),
       routes: {
         ...AuthModule().routers,

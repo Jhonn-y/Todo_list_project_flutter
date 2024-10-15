@@ -10,7 +10,19 @@ class SplashPage extends StatelessWidget {
         title: Text('Splash Screen'),
       ),
       body: Center(
-        child: Text('Splash Screen'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: (){
+                Navigator.of(context).pushNamed('/login');
+              }, child: Text('Login'),
+            ), 
+                SizedBox(height: 10),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).pushNamed('/register');
+            }, child: Text('Register'),),
+          ],
+            ),
       ),
     );
   }

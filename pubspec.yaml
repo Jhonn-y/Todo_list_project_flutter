@@ -33,6 +33,11 @@ dependencies:
   provider: ^6.1.2
   sqflite: ^2.4.0
   path: ^1.9.0
+  google_fonts: ^6.2.1
+  sign_in_button: ^3.2.0
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+
 
 
 
@@ -63,7 +68,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - Assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -78,10 +84,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: EyeIcon
+      fonts:
+        - asset: Assets\fonts\EyeIcon.ttf 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
