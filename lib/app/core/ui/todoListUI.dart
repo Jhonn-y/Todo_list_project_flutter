@@ -12,7 +12,7 @@ class TodoListUI {
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 80, 2, 182),
         foregroundColor: Colors.white,
-        textStyle: TextStyle(fontSize: 15.0),
+        textStyle: const TextStyle(fontSize: 15.0),
 
         ),
     ),

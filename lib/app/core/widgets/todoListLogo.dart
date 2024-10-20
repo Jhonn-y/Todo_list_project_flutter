@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_project/app/ui/themeExtentions.dart';
+import 'package:todo_list_project/app/core/ui/themeExtentions.dart';
 
 class TodoListLogo extends StatelessWidget {
   const TodoListLogo({super.key});

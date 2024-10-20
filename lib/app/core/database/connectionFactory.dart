@@ -31,7 +31,7 @@ class ConnectionFactory {
         onUpgrade: _onUpgrade,
         onDowngrade: _onDowngrade);
       });
-  };
+  }
     
   return _db!;
   }

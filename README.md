@@ -1,16 +1,10 @@
 # todo_list_project
 
-A new Flutter project.
+### pontos importantes para melhorar
 
-## Getting Started
+metodo contains retorna sempre uma lista vazia no firebase
+então os metodos de register e login ainda não funcionam.
 
-This project is a starting point for a Flutter application.
+criar pagina de recuperar senha e separar o recuperar senha do login
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Resolução: Desativar a proteção contra enumeração de e-mails, porem abre brechas de segurança.

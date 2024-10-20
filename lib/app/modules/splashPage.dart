@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_project/app/core/widgets/todoListLogo.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -7,22 +8,10 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Splash Screen'),
+        title: const Text('Splash Screen'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: (){
-                Navigator.of(context).pushNamed('/login');
-              }, child: Text('Login'),
-            ), 
-                SizedBox(height: 10),
-            ElevatedButton(onPressed: (){
-              Navigator.of(context).pushNamed('/register');
-            }, child: Text('Register'),),
-          ],
-            ),
+      body: const Center(
+        child: TodoListLogo(),
       ),
     );
   }

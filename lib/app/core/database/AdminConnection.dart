@@ -17,7 +17,7 @@ class AdminConnection with WidgetsBindingObserver{
       default:
         print("Unknown state");
         break;  
-    };
+    }
     
     
     super.didChangeAppLifecycleState(state);
