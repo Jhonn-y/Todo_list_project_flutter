@@ -37,6 +37,7 @@ class _AppWidgetState extends State<AppWidget> {
       theme: TodoListUI.theme,
       navigatorKey: TodoListNavigator.navigatorKey,
       home: const SplashPage(),
+      initialRoute: '/home',
       routes: {
         ...AuthModule().routers,
         ...HomeModule().routers,

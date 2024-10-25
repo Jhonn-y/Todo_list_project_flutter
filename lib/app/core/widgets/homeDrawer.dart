@@ -14,17 +14,17 @@ class HomeDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Drawer(
+    return  Drawer(
       child: ListView(
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
               color: context.primaryColor.withAlpha(70),
+              
             ),
             child: Row(
               children: [
-                Selector<Authprovider, String>(
+                Selector<AuthProvide, String>(
                   builder: (_, value, __) {
                     return CircleAvatar(
                       backgroundImage: AssetImage(value),
@@ -39,7 +39,7 @@ class HomeDrawer extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Selector<Authprovider, String>(
+                    child: Selector<AuthProvide, String>(
                       builder: (_, value, __) {
                         return Text(
                           value,
@@ -85,10 +85,10 @@ class HomeDrawer extends StatelessWidget {
             },);},
             title: Text('Alterar nome'),
           ),
-          ListTile(onTap: () => context.read<Authprovider>().logout(),
+          ListTile(onTap: () => context.read<AuthProvide>().logout(),
           title: Text('Sair'),),
         ],
       ),
-    ));
+    );
   }
 }

@@ -54,8 +54,8 @@ class TodoListField extends StatelessWidget {
                           },
                           icon: Icon(
                             !obscureValue
-                                ? MyFlutterAppIcons.eye_slash
-                                : MyFlutterAppIcons.eye,
+                                ? MyFlutterApp.eye_slash
+                                : MyFlutterApp.eye,
                             size: 15,
                           ),
                         )

@@ -1,14 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:todo_list_project/app/core/navigator/todoListNavigator.dart';
 import 'package:todo_list_project/app/services/user/userService.dart';
 
-class Authprovider extends ChangeNotifier{
+class AuthProvide extends ChangeNotifier{
   final FirebaseAuth _firebaseAuth;
   final UserService _userService;
 
-  Authprovider({required FirebaseAuth firebaseAuth,required UserService userService})
+  AuthProvide({required FirebaseAuth firebaseAuth,required UserService userService})
     : _firebaseAuth = firebaseAuth, _userService = userService;
 
   Future<void> logout() => _userService.logOut();

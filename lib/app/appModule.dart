@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_project/app/appWidget.dart';
-import 'package:todo_list_project/app/core/auth/authProvider.dart';
+import '../app/core/auth/authProvider.dart';
 import 'package:todo_list_project/app/core/database/connectionFactory.dart';
 import 'package:todo_list_project/app/repo/users/userRepository.dart';
 import 'package:todo_list_project/app/repo/users/userRepositoryImp.dart';
@@ -27,7 +27,7 @@ class AppModule extends StatelessWidget {
           create: (_) => ConnectionFactory(),
           lazy: false,
         ),
-        ChangeNotifierProvider(create: (context) => Authprovider(firebaseAuth: context.read()
+        ChangeNotifierProvider(create: (context) => AuthProvide(firebaseAuth: context.read()
         , userService: context.read())..loadListeners(),
         lazy: false,)
       ],

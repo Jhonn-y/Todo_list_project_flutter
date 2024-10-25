@@ -40,6 +40,7 @@ dependencies:
   validatorless: ^1.2.3
   flutter_overlay_loader: ^2.0.0
   google_sign_in: ^6.2.1
+  date_picker_timeline: ^1.2.6
 
 
 
@@ -88,9 +89,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: EyeIcon
+    - family: MyFlutterApp
       fonts:
-        - asset: Assets\fonts\EyeIcon.ttf 
+        - asset: Assets\fonts\MyFlutterApp.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
