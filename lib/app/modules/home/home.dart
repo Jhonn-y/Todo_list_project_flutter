@@ -7,9 +7,27 @@ import 'package:todo_list_project/app/core/widgets/homeFilters.dart';
 import 'package:todo_list_project/app/core/widgets/homeHeader.dart';
 import 'package:todo_list_project/app/core/widgets/homeTask.dart';
 import 'package:todo_list_project/app/core/widgets/homeWeekFilter.dart';
+import 'package:todo_list_project/app/modules/tasks/task_module.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
+  void _goToTask(BuildContext context){
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        transitionDuration: Duration(milliseconds: 400),
+        transitionsBuilder:(context, animation, secondaryAnimation, child) {
+          animation = CurvedAnimation(parent: animation, curve: Curves.easeInQuad);
+          return ScaleTransition(scale: animation,
+          alignment: Alignment.bottomRight,
+          child: child,);
+        },
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return TaskModule().getPage('/task/create', context);
+        },
+      )
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +47,7 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: context.primaryColor,
-        onPressed: (){
-
-      },
+        onPressed: () => _goToTask(context),
       child: Icon(Icons.add, color: Colors.white,),),
       drawer: HomeDrawer(),
       body: LayoutBuilder(builder: (context, constraints) {

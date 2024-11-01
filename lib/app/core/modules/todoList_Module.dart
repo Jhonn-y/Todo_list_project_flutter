@@ -19,4 +19,15 @@ import 'package:todo_list_project/app/core/modules/todoList_page.dart';
     )));
   }
 
+  Widget getPage(String path, BuildContext context) {
+    final widgetBuilder = _routers[path];
+    if (widgetBuilder != null) {
+      return TodolistPage(
+        page: widgetBuilder,
+      bindings: _bindings,
+    );
+    }
+    throw Exception('No page found for path: $path');
+  }
+
 }
