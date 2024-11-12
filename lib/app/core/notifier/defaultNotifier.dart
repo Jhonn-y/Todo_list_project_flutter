@@ -32,11 +32,4 @@ class DefaultNotifier extends ChangeNotifier{
     _success = false;
   }
 
-
-
-
-
-
-
-
 }

@@ -45,8 +45,7 @@ class _AppWidgetState extends State<AppWidget> {
         const Locale('pt', 'BR'),
       ],
       navigatorKey: TodoListNavigator.navigatorKey,
-      home: const SplashPage(),
-      initialRoute: '/home',
+      home: SplashPage(),
       routes: {
         ...AuthModule().routers,
         ...HomeModule().routers,

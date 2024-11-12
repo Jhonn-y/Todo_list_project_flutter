@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_list_project/app/models/task.dart';
+import 'package:todo_list_project/app/modules/auth/controllers/homeController.dart';
 
 class Tasks extends StatelessWidget {
-  const Tasks({super.key});
+  final TaskModel taskModel;
+  final dateFormat = DateFormat('dd/MM/y');
+  Tasks({super.key, required this.taskModel });
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +24,19 @@ class Tasks extends StatelessWidget {
           ]),
       margin: EdgeInsets.symmetric(vertical: 5),
       child: ListTile(
-        leading: Checkbox(value: true, onChanged: (value) {}),
+        leading: Checkbox(value: taskModel.isFinished, onChanged: (value) {
+          context.read<HomeController>().checkOrUncheckTask(taskModel);
+        }),
         title: Text(
-          'Descrição',
+          taskModel.description,
           style: TextStyle(
-            decoration: true ? TextDecoration.lineThrough : null,
+            decoration: taskModel.isFinished ? TextDecoration.lineThrough : null,
           ),
         ),
         subtitle: Text(
-          '10/08/2024',
+          dateFormat.format(taskModel.dateTime),
           style: TextStyle(
-            decoration: true ? TextDecoration.lineThrough : null,
+            decoration: taskModel.isFinished ? TextDecoration.lineThrough : null,
           ),
         ),
         shape: RoundedRectangleBorder(

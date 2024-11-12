@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
       context: context,
       succesCallback: (notifier, listenerIntance) {
         listenerIntance.dispose();
-        Navigator.of(context).pop();
+        // Navigator.of(context).pop();
       },
       error: (notifier, listenerIntance) {
         Messages.of(context).showError('Erro');      },
