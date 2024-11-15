@@ -10,23 +10,25 @@ class UserServiceImp implements UserService {
   @override
   Future<User?> register(String email, String password) =>
       _userRepository.register(email, password);
-      
-        @override
-        Future<User?> login(String email, String password) {
-          return _userRepository.login(email,password);
-        }
-        
-          @override
-          Future<void> forgotPassword(String email) => _userRepository.forgotPassword(email);
-          
-            @override
-            Future<User?> googleSingIn() {
-              return _userRepository.googleSingIn();
-            }
-            
-              @override
-              Future<void> logOut() => _userRepository.logOut();
-              
-                @override
-                Future<void> updateDisplayName(String name) => _userRepository.updateDisplayName(name);
+
+  @override
+  Future<User?> login(String email, String password) {
+    return _userRepository.login(email, password);
+  }
+
+  @override
+  Future<void> forgotPassword(String email) =>
+      _userRepository.forgotPassword(email);
+
+  @override
+  Future<User?> googleSingIn() {
+    return _userRepository.googleSingIn();
+  }
+
+  @override
+  Future<void> logOut() => _userRepository.logOut();
+
+  @override
+  Future<void> updateDisplayName(String name) =>
+      _userRepository.updateDisplayName(name);
 }

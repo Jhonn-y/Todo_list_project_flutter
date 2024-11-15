@@ -30,7 +30,6 @@ class _LoginPageState extends State<LoginPage> {
       context: context,
       succesCallback: (notifier, listenerIntance) {
         listenerIntance.dispose();
-        Navigator.of(context).pop();
       },
       everCallback: (notifier, listenerIntance) {
         if(notifier is LoginController) {

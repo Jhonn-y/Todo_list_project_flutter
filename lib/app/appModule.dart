@@ -18,20 +18,20 @@ class AppModule extends StatelessWidget {
       providers: [
         Provider(create: (_) => FirebaseAuth.instance),
         Provider<UserRepository>(
-          create: (context) => UserRepositoryImp(firebaseAuth: context.read()),lazy: false,
-        ),
-        Provider<UserService>(
-          create: (context) => UserServiceImp(userRepository: context.read<UserRepository>()),lazy: false,
+          create: (context) => UserRepositoryImp(firebaseAuth: context.read(),),lazy: false,
         ),
         Provider(
           create: (_) => ConnectionFactory(),
           lazy: false,
         ),
+        Provider<UserService>(
+          create: (context) => UserServiceImp(userRepository: context.read<UserRepository>()),lazy: false,
+        ),
         ChangeNotifierProvider(create: (context) => AuthProvide(firebaseAuth: context.read()
         , userService: context.read())..loadListeners(),
         lazy: false,)
       ],
-      child: const AppWidget(),
+      child: AppWidget(),
     );
   }
 }

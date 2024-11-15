@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list_project/app/appModule.dart';
 import 'package:todo_list_project/app/core/ui/themeExtentions.dart';
 import 'package:todo_list_project/app/models/taskTodoEnum.dart';
 import 'package:todo_list_project/app/models/totalTask.dart';
@@ -11,6 +10,7 @@ class CardFilter extends StatelessWidget {
   final TaskTodoEnum taskFilter;
   final TotalTask? totalTask;
   final bool isSelected;
+  
 
 
 
@@ -30,6 +30,8 @@ class CardFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int tasksNotFinished = (totalTask?.tasks ?? 0) - (totalTask?.tasksFinished ?? 0);
+
     return InkWell(
       onTap: () => context.read<HomeController>().findTasks(filter: taskFilter ),
       borderRadius: BorderRadius.circular(30),
@@ -49,7 +51,7 @@ class CardFilter extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              " ${totalTask?.tasks ?? 0} tarefas",
+              " ${tasksNotFinished} tarefas",
               style: context.titleStyle.copyWith(
                 fontSize: 15,
                 color: isSelected ? Colors.white : Colors.grey,

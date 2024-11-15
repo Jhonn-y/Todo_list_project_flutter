@@ -48,5 +48,22 @@ endDate.toIso8601String()]);
     WHERE id = ?
     ''', [finished,task.id]);
   }
+
+  @override
+  Future<void> removeById(int id) async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+
+    await conn.rawDelete('''
+      DELETE FROM todo
+      WHERE id = ?
+    ''', [id]);
+  }
+
+  @override
+  Future<void> removeAllTasks() async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+
+    await conn.delete('todo');
+  }
   
 }

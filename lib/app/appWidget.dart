@@ -22,7 +22,7 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   void initState() {
     super.initState();
-    FirebaseAuth auth = FirebaseAuth.instance;
+    
     WidgetsBinding.instance.addObserver(admconnetion);
   }
 
@@ -35,17 +35,18 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Todo list',
       theme: TodoListUI.theme,
+      home: SplashPage(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [
-        const Locale('pt', 'BR'),
+        Locale('pt', 'BR'),
       ],
       navigatorKey: TodoListNavigator.navigatorKey,
-      home: SplashPage(),
       routes: {
         ...AuthModule().routers,
         ...HomeModule().routers,

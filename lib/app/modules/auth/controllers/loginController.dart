@@ -29,7 +29,7 @@ class LoginController extends DefaultNotifier{
   hideLoading();
   notifyListeners();
 }
-  }
+}
 
   Future<void> forgotPassword(String email) async {
     try {

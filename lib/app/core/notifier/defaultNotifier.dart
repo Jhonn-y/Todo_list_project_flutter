@@ -1,8 +1,7 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
-class DefaultNotifier extends ChangeNotifier{
+class DefaultNotifier extends ChangeNotifier {
   bool _loading = false;
   String? _error;
   bool _success = false;
@@ -22,14 +21,13 @@ class DefaultNotifier extends ChangeNotifier{
 
   void success() => _success = true;
 
-  void showLoadingAndResetState(){
+  void showLoadingAndResetState() {
     showLoading();
     resetState();
   }
-  
+
   void resetState() {
     setError(error);
     _success = false;
   }
-
 }

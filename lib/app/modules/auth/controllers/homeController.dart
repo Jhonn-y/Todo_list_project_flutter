@@ -136,5 +136,10 @@ class HomeController extends DefaultNotifier {
     refreshPage();
   }
 
+  Future<void> deleteTask(int id) async {
+    await _tasksService.removeById(id);
+    refreshPage();
+  }
+
 
 }
